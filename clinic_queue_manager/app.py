@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect, session
 from collections import deque
 from models import Patient
 
+#Initialize Flask application
 app = Flask(__name__)
 app.secret_key = "clinic_secret"
 
