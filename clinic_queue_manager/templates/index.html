@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Clinic Dashboard</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo-section">
+<img src="{{ url_for('static', filename='logo.png') }}" class="logo">
+<h2>City Health Clinic</h2>
+</div>
+
+<div class="nav-links">
+<a href="/home">Home</a>
+<a href="/logout">Logout</a>
+</div>
+
+</header>
+
+<div class="container">
+
+<p>Logged in as: <strong>{{ session['user'] }}</strong></p>
+
+<div class="card">
+
+<h2>Patient Waiting Queue</h2>
+
+<p>Total Patients Waiting: {{ total }}</p>
+
+<!-- ADD PATIENT FORM -->
+<h3>Add Patient</h3>
+
+<form method="POST" action="/add">
+<input type="text" name="name" placeholder="Enter Patient Name" required>
+<button type="submit">Add Patient</button>
+</form>
+
+<br>
+
+<table>
+
+<tr>
+<th>Position</th>
+<th>Patient</th>
+<th>Status</th>
+</tr>
+
+{% for patient in patients %}
+<tr>
+<td>{{ loop.index }}</td>
+<td>{{ patient }}</td>
+<td><span class="badge">Waiting</span></td>
+</tr>
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="/serve">
+<button>Serve Next Patient</button>
+</a>
+
+</div>
+
+<br>
+
+<div class="card">
+
+<h3>Served Patients History</h3>
+
+<table>
+
+<tr>
+<th>Patient</th>
+<th>Status</th>
+</tr>
+
+{% for p in history %}
+<tr>
+<td>{{ p }}</td>
+<td>Served</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+
+<footer>
+<p>Clinic Queue Manager System | CSC 202</p>
+</footer>
+
+</body>
+
+</html>
