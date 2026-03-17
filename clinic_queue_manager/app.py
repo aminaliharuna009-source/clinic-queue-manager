@@ -7,7 +7,7 @@ from models import Patient
 app = Flask(__name__)
 app.secret_key = "clinic_secret"
 
-# FIFO Queue
+# FIFO Queue to store waiting patients
 patient_queue = deque()
 
 # LIFO Stack
