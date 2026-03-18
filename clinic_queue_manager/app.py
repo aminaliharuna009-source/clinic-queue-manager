@@ -16,6 +16,7 @@ served_history = []
 
 
 # SIGN IN (NO PASSWORD)
+#Route for admin login
 @app.route("/", methods=["GET", "POST"])
 def login():
 
