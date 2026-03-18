@@ -11,6 +11,7 @@ app.secret_key = "clinic_secret"
 patient_queue = deque()
 
 # LIFO Stack
+# stark to store served patient history
 served_history = []
 
 
