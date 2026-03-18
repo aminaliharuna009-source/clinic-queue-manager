@@ -72,6 +72,7 @@ def serve():
         return redirect("/")
 
     if patient_queue:
+    #Rmove patient from front of queue(FIFO)
         served_patient = patient_queue.popleft()
         served_history.append(served_patient)
 
