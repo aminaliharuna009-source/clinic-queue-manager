@@ -1,5 +1,5 @@
 from datetime import datetime
-
+#Patient class representing clinic visitor
 class Patient:
 
     def __init__(self, name):
