@@ -78,7 +78,7 @@ def serve():
     return redirect("/home")
 
 
-# LOGOUT ADMIN AND CLEAR SESSION
+# logout admin and clear session
 @app.route("/logout")
 def logout():
     session.pop("user", None)
