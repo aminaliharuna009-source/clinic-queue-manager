@@ -64,7 +64,7 @@ def add_patient():
     return redirect("/home")
 
 
-# SERVE PATIENT (FIFO)
+# SERVE PATIENT IN QUEUE(FIFO)
 @app.route("/serve")
 def serve():
 
